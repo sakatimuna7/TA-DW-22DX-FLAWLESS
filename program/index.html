@@ -8,5 +8,110 @@
     <link rel="stylesheet" href="./styles/index.css" />
   </head>
 
-  <body></body>
+  <body>
+    <nav class="nav-bar">
+      <ul>
+        <li>
+          <a href="#"
+            ><img src="./assets/Logo.svg" alt="logo hidroponik ku"
+          /></a>
+        </li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Produk</a></li>
+        <li><a href="#">Tentang Kami</a></li>
+      </ul>
+    </nav>
+    <section class="hero">
+      <h1>
+        Menanam Tanpa Batas: Temukan Keajaiban Hidroponik di Setiap Tetes
+        Nutrisi!
+      </h1>
+      <p>
+        Selamat datang di HidroponikKu tempat di mana perjalanan hidroponik Anda
+        dimulai. Jelajahi dunia tanaman yang tumbuh subur tanpa tanah dan
+        temukan keindahan pertanian inovatif. Dari panduan praktis hingga
+        inspirasi desain sistem, kami hadir untuk memandu Anda melalui
+        langkah-langkah sukses bercocok tanam hidroponik. Mari bersama-sama
+        menciptakan kebun impian Anda yang modern dan berkelanjutan. Selamat
+        mengeksplorasi, bertumbuh, dan terinspirasi bersama HidroponikKu!
+      </p>
+      <img
+        src="./assets/backround_hero.svg"
+        alt="backround hero"
+        class="decoration"
+      />
+    </section>
+    <section class="benefit" id="benefit"></section>
+    <section class="program" id="program"></section>
+    <section class="footer"></section>
+
+    <script>
+      const data_benefit = [
+        {
+          icon: "",
+          label: "Pertumbuhan Cepat",
+          desc: "Tanaman tumbuh lebih cepat dalam lingkungan hidroponik yang terkontrol.",
+        },
+        {
+          icon: "",
+          label: "Efisiensi Air",
+          desc: "Penggunaan air lebih sedikit, didaur ulang dalam sistem tertutup.",
+        },
+        {
+          icon: "",
+          label: "Kontrol Lingkungan",
+          desc: "Suhu, kelembaban, dan nutrisi dapat diatur secara akurat.",
+        },
+        {
+          icon: "",
+          label: "Tanpa Tanah",
+          desc: "Pertanian tanpa tanah, mengurangi risiko pencemaran dan mempermudah perawatan.",
+        },
+      ];
+      const sec_hero = document.querySelector(".hero");
+      const sec_benefit = document.querySelector("#benefit");
+
+      //   ketika hero tertutup maka akan menambahkan class crolled
+      const heroObserver = new IntersectionObserver(
+        (entries) => {
+          const [entry] = entries;
+          if (!entry.isIntersecting) {
+            document.querySelector("nav").classList.add("scrolled");
+          } else {
+            document.querySelector("nav").classList.remove("scrolled");
+          }
+        },
+        {
+          threshold: 0.9,
+        }
+      );
+
+      load_dataBenefit = () => {
+        data_benefit.map((benefit) => {
+          const _element = make_elementBenefit(benefit);
+          //   console.log(_element);
+          sec_benefit.append(_element);
+        });
+      };
+
+      const make_elementBenefit = (benefit) => {
+        const container = document.createElement("div");
+        const icon = document.createElement("img");
+        const label = document.createElement("h2");
+        const desc = document.createElement("p");
+
+        icon.src = benefit.icon;
+        label.innerText = benefit.label;
+        desc.innerText = benefit.desc;
+        container.append(icon, label, desc);
+
+        return container;
+      };
+      //   jika document di load
+      document.addEventListener("DOMContentLoaded", () => {
+        load_dataBenefit();
+        heroObserver.observe(sec_hero);
+      });
+    </script>
+  </body>
 </html>
