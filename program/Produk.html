@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Produk</title>
+    <link rel="icon" href="./assets/Icon-hidroponikku.svg" />
+    <link rel="stylesheet" href="./styles/index.css" />
+  </head>
+
+  <body>
+    <nav class="nav-bar">
+      <ul>
+        <li>
+          <a href="#"
+            ><img src="./assets/Logo.svg" alt="logo hidroponik ku"
+          /></a>
+        </li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Produk</a></li>
+        <li><a href="#">Tentang Kami</a></li>
+      </ul>
+    </nav>
+    <section class="hero">
+      <h1>
+        Selamat Datang di Pertanian Masa Depan
+      </h1>
+      <p>
+        
+      </p>
+      <img
+        src="./assets/backround_hero.svg"
+        alt="backround hero"
+        class="decoration"
+      />
+    </section>
+    <section class="benefit" id="benefit"></section>
+    <section class="program" id="program"></section>
+    <section class="footer"></section>
+
+    <script>
+      const data_benefit = [
+        {
+          icon: "",
+          label: "Pelatihan Hidroponik",
+          desc: "Punya lahan sempit, tinggal di perkotaan yang panas, tapi ingin menyalurkan hobi berkebun sekaligus merasakan nikmatnya sayuran premium ?. Hidriponik adalah solusinya.  HidroponikKu mengajak anda untuk lebih mengenal Hidroponik dari pemula hingga skala industri.",
+        },
+        
+      ];
+      const sec_hero = document.querySelector(".hero");
+      const sec_benefit = document.querySelector("#benefit");
+
+      //   ketika hero tertutup maka akan menambahkan class crolled
+      const heroObserver = new IntersectionObserver(
+        (entries) => {
+          const [entry] = entries;
+          if (!entry.isIntersecting) {
+            document.querySelector("nav").classList.add("scrolled");
+          } else {
+            document.querySelector("nav").classList.remove("scrolled");
+          }
+        },
+        {
+          threshold: 0.9,
+        }
+      );
+
+      load_dataBenefit = () => {
+        data_benefit.map((benefit) => {
+          const _element = make_elementBenefit(benefit);
+          //   console.log(_element);
+          sec_benefit.append(_element);
+        });
+      };
+
+      const make_elementBenefit = (benefit) => {
+        const container = document.createElement("div");
+        const icon = document.createElement("img");
+        const label = document.createElement("h2");
+        const desc = document.createElement("p");
+
+        icon.src = benefit.icon;
+        label.innerText = benefit.label;
+        desc.innerText = benefit.desc;
+        container.append(icon, label, desc);
+
+        return container;
+      };
+      //   jika document di load
+      document.addEventListener("DOMContentLoaded", () => {
+        load_dataBenefit();
+        heroObserver.observe(sec_hero);
+      });
+    </script>
+  </body>
+</html>
