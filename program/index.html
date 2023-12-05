@@ -9,18 +9,20 @@
   </head>
 
   <body>
-    <nav class="nav-bar">
-      <ul>
-        <li>
-          <a href="#"
-            ><img src="./assets/Logo.svg" alt="logo hidroponik ku"
-          /></a>
-        </li>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Produk</a></li>
-        <li><a href="#">Tentang Kami</a></li>
-      </ul>
-    </nav>
+    <header>
+      <nav class="nav-bar">
+        <ul>
+          <li>
+            <a href="#"
+              ><img src="./assets/Logo.svg" alt="logo hidroponik ku"
+            /></a>
+          </li>
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#">Produk</a></li>
+          <li><a href="#">Tentang Kami</a></li>
+        </ul>
+      </nav>
+    </header>
     <section class="hero">
       <h1>
         Menanam Tanpa Batas: Temukan Keajaiban Hidroponik di Setiap Tetes
@@ -42,34 +44,87 @@
       />
     </section>
     <section class="benefit" id="benefit"></section>
-    <section class="program" id="program"></section>
+    <section class="program" id="program"><h1>Program Kami</h1></section>
     <section class="footer"></section>
 
     <script>
       const data_benefit = [
         {
-          icon: "",
+          icon: "carbon_crop-growth.svg",
           label: "Pertumbuhan Cepat",
           desc: "Tanaman tumbuh lebih cepat dalam lingkungan hidroponik yang terkontrol.",
         },
         {
-          icon: "",
+          icon: "material-symbols_water.svg",
           label: "Efisiensi Air",
           desc: "Penggunaan air lebih sedikit, didaur ulang dalam sistem tertutup.",
         },
         {
-          icon: "",
+          icon: "game-icons_ecology.svg",
           label: "Kontrol Lingkungan",
           desc: "Suhu, kelembaban, dan nutrisi dapat diatur secara akurat.",
         },
         {
-          icon: "",
+          icon: "mdi_land-fields.svg",
           label: "Tanpa Tanah",
           desc: "Pertanian tanpa tanah, mengurangi risiko pencemaran dan mempermudah perawatan.",
         },
       ];
+      const data_program = [
+        {
+          image: "",
+          label: "Sistem NFT (Nutrient Film Technique)",
+          desc: "Sistem ini menggunakan aliran tipis larutan nutrisi yang mengalir di bawah akar tanaman yang ditempatkan dalam saluran tipis. Memungkinkan tanaman mendapatkan nutrisi secara konstan.",
+        },
+        {
+          image: "",
+          label: "Sistem Wick",
+          desc: "Sistem sederhana yang menggunakan sumbu (wick) untuk menyerap dan mengalirkan larutan nutrisi ke akar tanaman. Cocok untuk skala kecil dan tanaman dengan kebutuhan nutrisi rendah.",
+        },
+        {
+          image: "",
+          label: "Sistem Kratky",
+          desc: "Metode pasif yang melibatkan air nutrisi yang disajikan dalam wadah tertutup, dengan tanaman menyerap nutrisi saat akar tumbuh. Cocok untuk tanaman dengan siklus hidup pendek.",
+        },
+        {
+          image: "",
+          label: "Sistem DFT (Deep Flow Technique)",
+          desc: "Sistem ini mirip dengan NFT, tetapi larutan nutrisi mengalir lebih dalam di bawah akar tanaman. Memungkinkan akar mendapatkan lebih banyak oksigen.",
+        },
+        {
+          image: "",
+          label: "Aeroponik",
+          desc: "Tanaman ditempatkan di ruang terbuka, dan akar disemprot dengan kabut larutan nutrisi. Meningkatkan aerasi akar dan memungkinkan penyerapan nutrisi yang lebih efisien.",
+        },
+        {
+          image: "",
+          label: "Sistem Vertikultur",
+          desc: "Tanaman ditanam secara vertikal, seringkali dalam struktur menara. Mengoptimalkan penggunaan ruang dan memberikan solusi untuk pertanian perkotaan.",
+        },
+        {
+          image: "",
+          label: "Kontrol pH dan EC (Electrical Conductivity)",
+          desc: "Program untuk memantau dan mengatur tingkat pH dan EC larutan nutrisi. Penting untuk menjaga keseimbangan nutrisi dan mencegah masalah pertumbuhan.",
+        },
+        {
+          image: "",
+          label: "Program Nutrisi Terencana",
+          desc: "Penggunaan campuran nutrisi yang tepat dan terukur sesuai dengan fase pertumbuhan tanaman. Memastikan tanaman mendapatkan nutrisi yang diperlukan.",
+        },
+        {
+          image: "",
+          label: "Automasi Sistem",
+          desc: "Menggunakan sensor dan kendali otomatis untuk mengatur suhu, kelembaban, dan pencahayaan. Meningkatkan efisiensi dan konsistensi pertumbuhan.",
+        },
+        {
+          image: "",
+          label: "Monitoring Tanaman Secara Digital",
+          desc: "Program berbasis sensor dan teknologi IoT yang memantau kesehatan tanaman, memberikan data real-time untuk pengambilan keputusan yang lebih baik.",
+        },
+      ];
       const sec_hero = document.querySelector(".hero");
       const sec_benefit = document.querySelector("#benefit");
+      const sec_program = document.querySelector("#program");
 
       //   ketika hero tertutup maka akan menambahkan class crolled
       const heroObserver = new IntersectionObserver(
@@ -94,22 +149,64 @@
         });
       };
 
+      load_dataProgram = () => {
+        let i = 1;
+        data_program.map((program) => {
+          const _element = make_elementProgram(
+            program,
+            i % 2 == 0 ? true : false
+          );
+          sec_program.append(_element);
+          //   console.log(i);
+          i++;
+        });
+      };
+
       const make_elementBenefit = (benefit) => {
         const container = document.createElement("div");
         const icon = document.createElement("img");
         const label = document.createElement("h2");
         const desc = document.createElement("p");
 
-        icon.src = benefit.icon;
+        icon.src = `./assets/${benefit.icon}`;
         label.innerText = benefit.label;
         desc.innerText = benefit.desc;
+        container.classList.add("card-benefit");
         container.append(icon, label, desc);
 
+        return container;
+      };
+
+      const make_elementProgram = (program, position) => {
+        const container = document.createElement("div");
+        const icon = document.createElement("img");
+        const content = document.createElement("div");
+        const label = document.createElement("h2");
+        const desc = document.createElement("p");
+        const btn = document.createElement("button");
+        const sukses = document.createElement("div");
+        // console.log(position);
+        icon.src = `./assets/default.jpg`;
+        label.innerText = program.label;
+        desc.innerHTML = program.desc;
+        btn.innerText = "See more";
+        content.classList.add("card-content");
+        content.append(label, desc, btn);
+        sukses.classList.add("program-sukses");
+        sukses.innerHTML = `<p>Lebih dari <br> <span>100+</span> <br> Program</p>`;
+        if (position) {
+          container.classList.add("card-program-right");
+          container.append(sukses, content, icon);
+        } else {
+          container.classList.add("card-program-left");
+          container.append(icon, content, sukses);
+        }
         return container;
       };
       //   jika document di load
       document.addEventListener("DOMContentLoaded", () => {
         load_dataBenefit();
+        load_dataProgram();
         heroObserver.observe(sec_hero);
       });
     </script>
