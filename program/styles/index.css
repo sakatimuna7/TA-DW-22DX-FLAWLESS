@@ -257,44 +257,42 @@ section.program > h1 {
   margin-bottom: 100px;
 }
 
+section.program > .card-program-left {
+  flex-direction: column;
+}
+s section.program > .card-program-right {
+  flex-direction: column;
+}
 section.program > .card-program-left,
 section.program > .card-program-right {
   display: flex;
-  flex-direction: row;
   /* background-color: #edffdf; */
   overflow: hidden;
   margin-bottom: 50px;
 }
 
-section.program > .card-program-left > img {
-  position: absolute;
-}
-section.program > .card-program-right > img {
-  position: absolute;
-  right: 100px;
-}
 section.program > .card-program-left > img,
 section.program > .card-program-right > img {
-  width: 257px;
+  width: 100%;
   height: 257px;
-  border-radius: 90px;
+  border-radius: 20px 20px 0px 0px;
+  object-fit: cover;
   align-self: center;
-  border: 19px solid #1a8873;
+  border: 10px solid #1a8873;
   background: var(--Color, #fff);
 }
 
-section.program > .card-program-left > .program-sukses {
-  border-radius: 0px 20px 20px 0px;
-}
 section.program > .card-program-left > .program-sukses,
 section.program > .card-program-right > .program-sukses {
   display: flex;
-  height: 200px;
+  width: 100%;
+  height: max-content;
   flex-direction: column;
   align-self: center;
   border: 2px solid #1a8873;
   background: #1a8873;
   padding: 20px 10px 20px 10px;
+  border-radius: 0px 0px 20px 20px;
 }
 section.program > .card-program-left > .program-sukses span,
 section.program > .card-program-right > .program-sukses span {
@@ -321,21 +319,18 @@ section.program > .card-program-right > .program-sukses p {
 }
 
 section.program > .card-program-left > .card-content {
-  padding: 20px 10px 20px 270px;
-  margin-left: 50px;
-  height: 200px;
+  height: max-content;
+  padding: 20px;
 }
 section.program > .card-program-right > .card-content {
-  padding: 20px 270px 10px 20px;
-  margin-right: 50px;
   height: 210px;
 }
 section.program > .card-program-left > .card-content,
 section.program > .card-program-right > .card-content {
   display: flex;
+  width: 100%;
   flex-direction: column;
   border: 2px solid #1a8873;
-  justify-content: center;
 }
 
 :is(body.dark) section.program > .card-program-left > .card-content > h2,
@@ -432,6 +427,148 @@ section.program > .card-program-right > .card-content > button:hover {
     gap: 50px;
     padding: 0px;
     margin-right: 100px;
+  }
+
+  /* section program */
+
+  section.program {
+    margin: 100px 200px 100px 200px;
+  }
+
+  section.program > h1 {
+    text-align: center;
+    margin-bottom: 100px;
+  }
+
+  section.program > .card-program-left,
+  section.program > .card-program-right {
+    display: flex;
+    flex-direction: row;
+    /* background-color: #edffdf; */
+    overflow: hidden;
+    margin-bottom: 50px;
+  }
+
+  section.program > .card-program-left > img {
+    position: absolute;
+  }
+  section.program > .card-program-right > img {
+    position: absolute;
+    right: 100px;
+  }
+  section.program > .card-program-left > img,
+  section.program > .card-program-right > img {
+    width: 257px;
+    height: 257px;
+    border-radius: 90px;
+    align-self: center;
+    border: 19px solid #1a8873;
+    background: var(--Color, #fff);
+  }
+
+  section.program > .card-program-left > .program-sukses {
+    border-radius: 0px 20px 20px 0px;
+    height: 200px;
+  }
+  section.program > .card-program-right > .program-sukses {
+    height: 210px;
+    border-radius: 20px 00px 0px 20px;
+  }
+  section.program > .card-program-left > .program-sukses,
+  section.program > .card-program-right > .program-sukses {
+    display: flex;
+    max-width: 150px;
+    flex-direction: column;
+    align-self: center;
+    border: 2px solid #1a8873;
+    background: #1a8873;
+    padding: 20px 10px 20px 10px;
+  }
+  section.program > .card-program-left > .program-sukses span,
+  section.program > .card-program-right > .program-sukses span {
+    color: var(--Color, #fff);
+    text-align: center;
+    font-family: Catamaran;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  section.program > .card-program-left > .program-sukses p,
+  section.program > .card-program-right > .program-sukses p {
+    color: #bed7a3;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  section.program > .card-program-left > .card-content {
+    padding: 20px 10px 20px 270px;
+    margin-left: 50px;
+    height: 200px;
+  }
+  section.program > .card-program-right > .card-content {
+    padding: 20px 270px 10px 20px;
+    margin-right: 50px;
+    height: 210px;
+  }
+  section.program > .card-program-left > .card-content,
+  section.program > .card-program-right > .card-content {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    border: 2px solid #1a8873;
+    justify-content: center;
+  }
+
+  :is(body.dark) section.program > .card-program-left > .card-content > h2,
+  :is(body.dark) section.program > .card-program-right > .card-content > h2 {
+    color: var(--textLight);
+  }
+
+  section.program > .card-program-left > .card-content > h2,
+  section.program > .card-program-right > .card-content > h2 {
+    height: min-content;
+    color: #656a61;
+    font-size: 22px;
+    font-weight: 700;
+  }
+  :is(body.dark) section.program > .card-program-left > .card-content > p,
+  :is(body.dark) section.program > .card-program-right > .card-content > p {
+    color: var(--textLight);
+  }
+  section.program > .card-program-left > .card-content > p,
+  section.program > .card-program-right > .card-content > p {
+    color: #656a61;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 130%;
+  }
+  section.program > .card-program-left > .card-content > button,
+  section.program > .card-program-right > .card-content > button {
+    border: none;
+    max-width: fit-content;
+    cursor: pointer;
+    border-radius: 11px;
+    background: #1a8873;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 10px 50px 10px 50px;
+    color: var(--Color, #fff);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 130%; /* 31.2px */
+    transition: ease 0.2s;
+  }
+  section.program > .card-program-left > .card-content > button:hover,
+  section.program > .card-program-right > .card-content > button:hover {
+    background: #137261;
+    transform: translateX(10px);
   }
 }
 @media only screen and (min-width: 1400px) {

@@ -6,7 +6,7 @@
     <title>Hidroponik Ku</title>
     <link rel="icon" href="./assets/Icon-hidroponikku.svg" />
     <link rel="stylesheet" href="./styles/index.css" />
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -210,7 +210,7 @@
         content.classList.add("card-content");
         content.append(label, desc, btn);
         sukses.classList.add("program-sukses");
-        sukses.innerHTML = `<p>Lebih dari <br> <span>100+</span> <br> Program</p>`;
+        sukses.innerHTML = `<p>Lebih dari</p> <span>100+</span> <p>Program</p>`;
         if (position) {
           container.classList.add("card-program-right");
           container.append(sukses, content, icon);
