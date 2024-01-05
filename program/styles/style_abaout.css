@@ -1,3 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+:root {
+  --header_bg: rgb(26, 67, 26);
+  --text_color: #333333;
+  --menu_color: #ffffff;
+  --menu_hover_color: #fef900;
+  --menu_bg: var(--text_color);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+header {
+  background-color: var(--header_bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.area_menu,
+.area_hamburger_menu {
+  display: inline-block;
+}
+
+.menu {
+    margin-left: 10px;
+    font: 1.2rem "Poppins";
+    color: var(--menu_color);
+    display: inline-block;
+}
+
+.menu::after {
+    content: "";
+    border-bottom: 1px solid var(--menu_hover_color);
+    display: block;
+    padding-bottom: 0.2rem;
+    transform: scaleX(0);
+    transition: 0.2s;
+  }
+
+  .menu:hover {
+    color: var(--menu_hover_color);
+  }
+
+  .menu:hover::after {
+    transform: scaleX(1);
+  }
+
+  .hamburger_menu {
+    display: none;
+    font: 1.2rem "Poppins";
+    color: var(--menu_color);
+  }
+
+  /* responsive */
+  @media (max-width: 768px) {
+    .hamburger_menu {
+      display: inline-block;
+    }
+    .area_menu {
+      display: block;
+      position: absolute;
+      background-color: var(--menu_bg);
+      width: 20rem;
+      height: 100vh;
+      right: -100%;
+      top: 100%;
+      transition: 0.5s;
+    }
+    .area_menu.open {
+      right: 0;
+    }
+    .menu {
+      display: block;
+      margin: 1rem;
+    }
+
+    .menu::after {
+      transform-origin: 0;
+    }
+    .menu:hover::after {
+      transform: scaleX(0.5);
+    }
+}
+
 *{
     margin: 0px;
     padding: 0px;
@@ -43,17 +136,19 @@ body{
 }
 .About{
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
     flex-wrap: wrap;
 }
 .About-image{
-    flex:1 ;
+   flex: auto;
     align-items: center;
-    margin-right: 60px;
+    margin-right: 10px;
     overflow: hidden;
 }
 .About-image img{
+    margin-left: auto;
+    margin-right: auto;
     max-width: 100%;
     height: auto;
     display: block;
@@ -75,8 +170,9 @@ body{
     line-height: 1.2;
     font-style: unset;
 }
-.About-content .misi{
+/* .About-content .misi{
     display: inline-block;
+    float: none;
     padding: 15px 20px;
     background-color: #4caf50;
     color: #fff;
@@ -87,8 +183,8 @@ body{
     transition: 0.4s ease;
 }
 .About-content .misi:hover{
-    background-color: #3e8e41;
-}
+    background-color: #3e8e41; */
+/* } */
 @media screen and (max-width: 768px){
     .heading{
         padding: 0px 20px;
@@ -115,7 +211,74 @@ body{
         padding: 0px;
         font-size: 16px;
     }
-    .About-content .misi{
+    /* .About-content .misi{
         font-size: 20px ;
-    }
+    } */
+
+}
+
+.heading2{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 20px auto;
+}
+.heading2 h1{
+    font-size: 40px;
+    color: #000;
+    margin-bottom: 25px;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 20%;
+    margin-top: 15px;
+    background-color: rgb(56, 144, 56);
+}
+.heading2 h1::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;   
+}
+.heading2 p{
+    font-size: 30px;
+    color: darkgreen;
+    margin-bottom: 40px;
+}
+
+.heading3{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 20px auto;
+}
+.heading3 h1{
+    font-size: 40px;
+    color: #000;
+    margin-bottom: 25px;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 20%;
+    margin-top: 15px;
+    background-color: rgb(56, 144, 56);
+}
+.heading3 h1::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;   
+}
+.heading3 p{
+    font-size: 30px;
+    color: darkgreen;
+    margin-bottom: 40px;
 }
