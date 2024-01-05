@@ -63,7 +63,12 @@
     <section class="benefit" id="benefit"></section>
     <section class="program" id="program"><h1>Program Kami</h1></section>
     <section class="footer"></section>
+    <!-- section Footer ini dibuat oleh anggota tim -->
 
+    <div
+      id="modal_detail"
+      class="w-full h-full bg-gray-600 bg-opacity-70 backdrop-blur-sm fixed left-0 top-0 z-50 hidden"
+    ></div>
     <script>
       const data_benefit = [
         {
@@ -89,56 +94,67 @@
       ];
       const data_program = [
         {
-          image: "",
+          id: 1,
+          image: "img1.jpg",
           label: "Sistem NFT (Nutrient Film Technique)",
           desc: "Sistem ini menggunakan aliran tipis larutan nutrisi yang mengalir di bawah akar tanaman yang ditempatkan dalam saluran tipis. Memungkinkan tanaman mendapatkan nutrisi secara konstan.",
         },
         {
-          image: "",
+          id: 2,
+          image: "img2.jpg",
           label: "Sistem Wick",
           desc: "Sistem sederhana yang menggunakan sumbu (wick) untuk menyerap dan mengalirkan larutan nutrisi ke akar tanaman. Cocok untuk skala kecil dan tanaman dengan kebutuhan nutrisi rendah.",
         },
         {
-          image: "",
+          id: 3,
+          image: "img3.jpeg",
           label: "Sistem Kratky",
           desc: "Metode pasif yang melibatkan air nutrisi yang disajikan dalam wadah tertutup, dengan tanaman menyerap nutrisi saat akar tumbuh. Cocok untuk tanaman dengan siklus hidup pendek.",
         },
         {
-          image: "",
+          id: 4,
+          image: "img4.jpg",
           label: "Sistem DFT (Deep Flow Technique)",
           desc: "Sistem ini mirip dengan NFT, tetapi larutan nutrisi mengalir lebih dalam di bawah akar tanaman. Memungkinkan akar mendapatkan lebih banyak oksigen.",
         },
         {
-          image: "",
+          id: 5,
+          image: "img5.jpg",
           label: "Aeroponik",
           desc: "Tanaman ditempatkan di ruang terbuka, dan akar disemprot dengan kabut larutan nutrisi. Meningkatkan aerasi akar dan memungkinkan penyerapan nutrisi yang lebih efisien.",
         },
         {
-          image: "",
+          id: 6,
+          image: "img6.jpg",
           label: "Sistem Vertikultur",
           desc: "Tanaman ditanam secara vertikal, seringkali dalam struktur menara. Mengoptimalkan penggunaan ruang dan memberikan solusi untuk pertanian perkotaan.",
         },
         {
-          image: "",
+          id: 7,
+          image: "img7.jpeg",
           label: "Kontrol pH dan EC (Electrical Conductivity)",
           desc: "Program untuk memantau dan mengatur tingkat pH dan EC larutan nutrisi. Penting untuk menjaga keseimbangan nutrisi dan mencegah masalah pertumbuhan.",
         },
         {
-          image: "",
+          id: 8,
+          image: "img8.jpg",
           label: "Program Nutrisi Terencana",
           desc: "Penggunaan campuran nutrisi yang tepat dan terukur sesuai dengan fase pertumbuhan tanaman. Memastikan tanaman mendapatkan nutrisi yang diperlukan.",
         },
         {
-          image: "",
+          id: 9,
+          image: "img9.jpg",
           label: "Automasi Sistem",
           desc: "Menggunakan sensor dan kendali otomatis untuk mengatur suhu, kelembaban, dan pencahayaan. Meningkatkan efisiensi dan konsistensi pertumbuhan.",
         },
         {
-          image: "",
+          id: 10,
+          image: "img10.jpeg",
           label: "Monitoring Tanaman Secara Digital",
           desc: "Program berbasis sensor dan teknologi IoT yang memantau kesehatan tanaman, memberikan data real-time untuk pengambilan keputusan yang lebih baik.",
         },
       ];
+
       const sec_hero = document.querySelector(".hero");
       const sec_benefit = document.querySelector("#benefit");
       const sec_program = document.querySelector("#program");
@@ -159,7 +175,7 @@
       );
 
       load_dataBenefit = () => {
-        data_benefit.map((benefit) => {
+        data_benefit?.map((benefit) => {
           const _element = make_elementBenefit(benefit);
           //   console.log(_element);
           sec_benefit.append(_element);
@@ -168,7 +184,7 @@
 
       load_dataProgram = () => {
         let i = 1;
-        data_program.map((program) => {
+        data_program?.map((program) => {
           const _element = make_elementProgram(
             program,
             i % 2 == 0 ? true : false
@@ -203,10 +219,11 @@
         const btn = document.createElement("button");
         const sukses = document.createElement("div");
         // console.log(position);
-        icon.src = `./assets/default.jpg`;
+        icon.src = `./assets/${program.image}`;
         label.innerText = program.label;
         desc.innerHTML = program.desc;
         btn.innerText = "See more";
+        btn.addEventListener("click", () => handleSeemore(program.id));
         content.classList.add("card-content");
         content.append(label, desc, btn);
         sukses.classList.add("program-sukses");
@@ -247,6 +264,47 @@
       document.getElementById("togle_bar").addEventListener("click", () => {
         navBar.classList.toggle("responsiv");
       });
+
+      const bodyModal = (data) => {
+        return `<div
+        class="w-1/2 h-auto border border-cyan-500 bg-white relative mx-auto my-20 rounded-lg px-4 py-2"
+      >
+        <div class="flex flex-row items-center justify-between border-b-2 pb-2">
+          <h2 class="text-xl">Detail</h2>
+          <a
+            href="javascript:void(0)"
+            class="text-red-700"
+            onclick="handleModalDismiss()"
+            ><i class="fa-solid fa-xmark"></i
+          ></a>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 p-4 justify-start items-start">
+          <img
+            src="./assets/${data.image}"
+            alt="image"
+            class="lg:row-span-3 object-cover"
+          />
+          <h1 class="ml-2">${data.label}</h1>
+          <p class="col-span-1 ml-2">
+            ${data.desc}
+          </p>
+        </div>
+      </div>`;
+      };
+
+      // handle program seemore
+      const handleSeemore = (id) => {
+        const data = data_program.find((data) => data.id == id);
+        // console.log({ data });
+        const modal = document.getElementById("modal_detail");
+        modal.innerHTML = bodyModal(data);
+        modal.classList.toggle("hidden");
+      };
+      const handleModalDismiss = () => {
+        const modal = document.getElementById("modal_detail");
+        modal.classList.toggle("hidden");
+        // console.log({ modal });
+      };
     </script>
   </body>
 </html>
