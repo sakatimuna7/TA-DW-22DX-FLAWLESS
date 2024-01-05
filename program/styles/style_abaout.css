@@ -239,9 +239,8 @@ body{
     position: relative;
     display: inline-block;
     text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 20%;
-    margin-top: 15px;
+    padding: 10px 50px;
+    border-radius: 15%;
     background-color:#7CC6A6;
 }
 .heading2 h1::after{
@@ -272,8 +271,8 @@ body{
     position: relative;
     display: inline-block;
     text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 20%;
+    padding: 10px 50px;
+    border-radius: 15%;
     margin-top: 15px;
     background-color: #7CC6A6;
 }
