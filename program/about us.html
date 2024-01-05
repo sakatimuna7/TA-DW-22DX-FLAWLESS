@@ -17,8 +17,8 @@
       <nav>
         <section class="area_menu">
           <a href="#" class="menu">Home</a>
-          <a href="#" class="menu">Profil</a>
-          <a href="#" class="menu">About Us</a>
+          <a href="#" class="menu">Produk</a>
+          <a href="#" class="menu">Tentang Kami</a>
         </section>
 
         <section class="area_hamburger_menu">
@@ -35,8 +35,8 @@
     <br />
 
     <div class="heading">
-      <h1>About Us</h1>
-      <p>We shared education knowledge about hydrophonics.</p>
+      <h1>Tentang Kami</h1>
+      <p><b>We shared education knowledge about hydrophonics.</p>
     </div>
     <div class="container">
       <section class="About">
@@ -61,21 +61,30 @@
     <div class="heading2">
       <h1>Misi</h1>
       <p>
-        Memberikan Edukasi tentang bagaimana cara untuk memberdayakan berkebun
-        dengan sistem Hydrophonik, agar masyarakat dapat memiliki persedian
-        pangan secara mandiri dan dapat memberikan suatu peluang untuk
-        masyarakat agar dapat mempunyai sumberdaya usaha sendri dengan sistem
-        ini.
+        Membantu masyarakat lebih memahami dan mengadopsi teknik hidr oponik.
+        Kami percaya bahwa hidroponik bukan hanya solusi inovatif untuk masa
+        depan pertanian, tetapi juga memberikan peluang bagi individu untuk
+        terlibat dalam pertanian perkotaan dan menghasilkan makanan berkualitas
+        tanpa tergantung pada tanah.
       </p>
     </div>
     <div class="heading3">
       <h1>Visi</h1>
       <p>
-        Menciptakan keberlanjutan pangan, meningkatkan kesadaran akan pertanian
-        berkelanjutan, dan memberikan akses kepada masyarakat untuk menghasilkan
-        makanan mereka sendiri. Serta Mewujudkan Masyarakat yang Mandiri dan
-        Berkelanjutan melalui Pertanian Hydroponik
+        Menjadi katalisator perubahan positif dalam dunia pertanian, memimpin
+        gerakan menuju gaya hidup berkelanjutan dan memberdayakan individu untuk
+        mengambil langkah-langkah nyata dalam mendukung ketahanan pangan global.
       </p>
     </div>
+
+    <script>
+      // buat event pada saat menu "hamburger" di klik
+      document
+        .querySelector(".hamburger_menu")
+        .addEventListener("click", () => {
+          // tampilkan class "open"
+          document.querySelector(".area_menu").classList.toggle("open");
+        });
+    </script>
   </body>
 </html>

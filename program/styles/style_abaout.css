@@ -1,10 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
 :root {
-  --header_bg: rgb(26, 67, 26);
+  --header_bg: #D5E7C0;
   --text_color: #333333;
-  --menu_color: #ffffff;
-  --menu_hover_color: #fef900;
+  --menu_color:#656A61;
+  --menu_hover_color: #1A8873;
   --menu_bg: var(--text_color);
+}
+
+.logo {
+    margin-left: 50px;
+  margin-right: 50px;
 }
 
 * {
@@ -15,8 +20,9 @@
 
 header {
   background-color: var(--header_bg);
+  word-spacing: 50px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center; 
   align-items: center;
   padding: 2px;
   position: fixed;
@@ -98,7 +104,7 @@ header {
     font-family: 'Roboto', sans-serif;
 }
 body{
-    background-color: #f2f2f2;
+    background-color: #ecf2e4;
 }
 .heading{
     width: 90%;
@@ -143,7 +149,7 @@ body{
 .About-image{
    flex: auto;
     align-items: center;
-    margin-right: 10px;
+    margin-right: px;
     overflow: hidden;
 }
 .About-image img{
@@ -224,7 +230,7 @@ body{
     align-items: center;
     flex-direction: column;
     text-align: center;
-    margin: 20px auto;
+    margin: 60px auto;
 }
 .heading2 h1{
     font-size: 40px;
@@ -236,7 +242,7 @@ body{
     padding: 10px 15px;
     border-radius: 20%;
     margin-top: 15px;
-    background-color: rgb(56, 144, 56);
+    background-color:#7CC6A6;
 }
 .heading2 h1::after{
     content: "";
@@ -245,8 +251,8 @@ body{
     height: 4px;   
 }
 .heading2 p{
-    font-size: 30px;
-    color: darkgreen;
+    font-size: 20px;
+    color: black;
     margin-bottom: 40px;
 }
 
@@ -269,7 +275,7 @@ body{
     padding: 10px 15px;
     border-radius: 20%;
     margin-top: 15px;
-    background-color: rgb(56, 144, 56);
+    background-color: #7CC6A6;
 }
 .heading3 h1::after{
     content: "";
@@ -278,7 +284,7 @@ body{
     height: 4px;   
 }
 .heading3 p{
-    font-size: 30px;
-    color: darkgreen;
+    font-size: 20px;
+    color: black;
     margin-bottom: 40px;
 }
