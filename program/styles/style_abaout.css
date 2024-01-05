@@ -20,7 +20,7 @@
 
 header {
   background-color: var(--header_bg);
-  word-spacing: 50px;
+  /* word-spacing: 40px; */
   display: flex;
   justify-content: center; 
   align-items: center;
