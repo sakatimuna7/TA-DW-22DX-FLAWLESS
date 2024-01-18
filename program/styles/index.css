@@ -382,6 +382,11 @@ section.program > .card-program-right > .card-content > button:hover {
   border-color: #045a5a;
 }
 
+:is(body.dark) .footer {
+  background-color: #424242;
+  color: white;
+}
+
 /* responsiv */
 
 /* Extra small devices (phones, 600px and down) */
