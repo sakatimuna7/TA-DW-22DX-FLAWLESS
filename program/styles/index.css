@@ -377,6 +377,11 @@ section.program > .card-program-right > .card-content > button:hover {
   transform: translateX(10px);
 }
 
+:is(body.dark) .modal-body {
+  background-color: #424242;
+  border-color: #045a5a;
+}
+
 /* responsiv */
 
 /* Extra small devices (phones, 600px and down) */
@@ -571,6 +576,7 @@ section.program > .card-program-right > .card-content > button:hover {
     transform: translateX(10px);
   }
 }
+
 @media only screen and (min-width: 1400px) {
   body > .benefit {
     grid-template-columns: repeat(4, 0fr);
