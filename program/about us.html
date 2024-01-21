@@ -8,25 +8,27 @@
   </head>
   <body>
     <header>
-      <!-- header logo -->
-      <section class="logo">
-        <img src="assets/Logo.svg" alt="Logo" />
-      </section>
-
-      <!-- Header Menu -->
-      <nav>
-        <section class="area_menu">
-          <a href="#" class="menu">Home&nbsp;</a>
-          <a href="#" class="menu">Produk&nbsp;</a>
-          <a href="#" class="menu">Tentang Kami</a>
-        </section>
-
-        <section class="area_hamburger_menu">
-          <a href="#" class="hamburger-menu"
-            ><i class="fa-solid fa-bars"></i
-          ></a>
-        </section>
-      </nav>
+        <nav class="nav-bar" id="nav_bar">
+          <div class="nav-logo">
+            <img src="./assets/Logo.svg" alt="logo hidroponik ku" />
+          </div>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="produk.html">Produk</a></li>
+            <li><a href="about.html" class="active">Tentang Kami</a></li>
+          </ul>
+          <div class="togle">
+            <a href="javascript:void(0)" class="togle-bar" id="togle_bar"
+              ><i class="fa-solid fa-bars"></i
+            ></a>
+            <a
+              href="javascript:void(0)"
+              id="togle_dark_mode"
+              class="togle-dark-mode"
+              ><i class="fa-solid fa-sun"></i
+            ></a>
+          </div>
+        </nav>
     </header>
 
     <br />
@@ -77,14 +79,9 @@
       </p>
     </div>
 
-    <script>
-      // buat event pada saat menu "hamburger" di klik
-      document
-        .querySelector(".hamburger_menu")
-        .addEventListener("click", () => {
-          // tampilkan class "open"
-          document.querySelector(".area_menu").classList.toggle("open");
-        });
-    </script>
+    <footer>
+
+    </footer>
+
   </body>
 </html>
