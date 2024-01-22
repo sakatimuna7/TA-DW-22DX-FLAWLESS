@@ -1,0 +1,39 @@
+.color-1{
+    color: #1A8873;
+}
+
+.color-2 {
+    color: #656A61;
+    margin-right: 120px;
+}
+
+.py-6{
+    padding: 100px 0;
+}
+
+.bg-nav{
+    background-color: #D5E7C0;
+}
+
+.bg-grey{
+    background-color: #eff5ea;
+}
+
+.link{
+    border: 2px solid #eff5ea;
+    padding: 20px;
+}
+
+.bg-footer{
+    background-color: #E9E9E9;
+}
+
+.bg-footer-2{
+    background-color: #363636;
+}
+
+.list-footer{
+    list-style: none;
+    font-size: 18px;
+    margin-left: -30px;
+}

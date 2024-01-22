@@ -1,278 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Menu Produk</title>
-    <link rel="icon" href="./assets/Icon-hidroponikku.svg" />
-    <link rel="stylesheet" href="./styles/index.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hidroponik-Ku</title>
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
 
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@500;700&display=swap");
-      :root {
-        --green0: #2e3826;
-        --green1: #0c745a;
-        --green4: #c8e2a9;
-      }
+    <!-- internal css -->
+    <link rel="stylesheet" href="style.css" />
 
-      body {
-        margin: 0;
-        font-family: "Catamaran", sans-serif;
-        font-weight: 500;
-        background-color: #cccccc;
-      }
-
-      a {
-        text-decoration: none;
-      }
-
-      body > .nav-bar {
-        flex-direction: row;
-        align-items: center;
-        padding-left: 10px;
-        padding-right: 50px;
-        position: fixed;
-        z-index: 99;
-        width: 100%;
-        transition: ease-in-out 0.1s;
-        /* background-color: #D5E7C0; */
-      }
-
-      .scrolled {
-        background-color: var(--green4);
-      }
-
-      body > .nav-bar > ul {
-        display: flex;
-        list-style-type: none;
-        gap: 100px;
-        align-items: center;
-      }
-
-      body > .nav-bar > ul > li > a > img {
-        width: 300px;
-        padding-right: 100px;
-      }
-
-      body > .nav-bar > ul > li > a {
-        font-weight: 700;
-        font-size: 18px;
-        color: var(--green0);
-        transition: ease-out 0.1s;
-      }
-
-      body > .nav-bar > ul > li > a:hover {
-        color: var(--green1);
-      }
-
-      body > .hero {
-        display: flex;
-        flex-direction: column;
-        background: linear-gradient(
-          180deg,
-          #89a766 0%,
-          rgba(225, 235, 215, 0) 38.36%,
-          rgba(209, 230, 185, 0) 62.41%,
-          #4d7a18 100%
-        );
-        align-items: center;
-        align-content: center;
-        height: 520px;
-      }
-
-      body > .hero > h1 {
-        color: #000000;
-        text-align: center;
-        font-size: 35px;
-        font-weight: 700;
-        padding-left: 20%;
-        padding-right: 20%;
-        padding-top: 180px;
-      }
-
-      body > .hero > p {
-        color: #20221f;
-        text-align: center;
-        font-family: "Catamaran";
-        font-size: 20px;
-        font-weight: 500;
-        line-height: 20px;
-        padding-left: 20%;
-        padding-right: 20%;
-        padding-bottom: 1px;
-        /* 150% */
-      }
-
-      body > .hero > .decoration {
-        width: 100%;
-        height: auto;
-      }
-
-      body > .benefit {
-        padding-top: 10px;
-        padding-left: 50px;
-        padding-right: 50px;
-        /* background-color: #1A8873; */
-      }
-      .h1 {
-        min-height: auto;
-        margin-top: 100px;
-        margin-bottom: 0;
-        /* display: flex; */
-        /* margin-left: 3%; */
-        /* margin-right: 5%; */
-        /* flex-direction: column; */
-        text-align: center;
-        font-size: 25px;
-        z-index: 1;
-      }
-
-      .p {
-        min-height: auto;
-        margin-top: 5px;
-        margin-bottom: 10px;
-        display: flex;
-        font-size: 17px;
-        padding-left: 25px;
-        margin-left: 2%;
-        margin-right: 2%;
-        
-      }
-      .akhir {
-        min-height: 80px;
-        display: flex;
-        margin-top: 300px;
-        align-items: center;
-        justify-content: center;
-        background-color: rgb(80, 80, 80);
-        color : #ffffff;
-        font: bold 10px "Catamaran";
-      }
-      .out{
-        margin-top: 300px;
-        margin-bottom: 100px;
-        margin-left: 3%;
-        
-      }
-      .background{
-        background-color: gray;
-      }
-    </style>
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
-
   <body>
-    <nav class="nav-bar">
-      <ul>
-        <li>
-          <a href="#"
-            ><img src="./assets/Logo.svg" alt="logo hidroponik ku"
-          /></a>
-        </li>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Produk</a></li>
-        <li><a href="#">Tentang Kami</a></li>
-      </ul>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary bg-nav">
+      <div class="container">
+        <a class="navbar-brand fs-2 fw-bold" href="index.html"
+          ><span class="color-1">Hidroponik</span
+          ><span class="color-2">Ku</span></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item me-5">
+              <a class="nav-link fs-6 fw-bold" aria-current="page" href="#"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item me-5">
+              <a class="nav-link fs-6 fw-bold color-1" href="#">Produk</a>
+            </li>
+            <li class="nav-item me-5">
+              <a class="nav-link fs-6 fw-bold" href="#">Tentang Kami</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
-    <section class="hero">
-      <h1>Selamat Datang di Pertanian Masa Depan</h1>
+    <!-- Navbar End -->
+
+    <!-- Start Background -->
+    <div class="card">
+      <img src="assets/background.jpg" class="card-img" />
+      <div class="card-img-overlay">
+        <div class="position-absolute top-50 start-50 translate-middle text-center">
+          <h1 class="card-title fw-bold mb-3">
+            Selamat Datang di Pertanian Masa Depan
+          </h1>
+          <h3>Budidaya Tanaman yang Memanfaatkan Air dan</h3>
+          <h3>Tanpa Menggunakan Tanah Sebagai Media</h3>
+        </div>
+      </div>
+    </div>
+    <!-- End Background -->
+
+    <!-- Start Content 1 -->
+    <div class="container py-5">
+      <h3 class="fw-bold">Pelatihan Hidroponik</h3>
       <p>
-        Budidaya Tanaman yang Memanfaatkan Air dan Tanpa Menggunakan Tanah
-        Sebagai Media
+        Punya lahan sempit, tinggal di perkotaan yang panas, tapi ingin
+        menyalurkan hobi berkebun sekaligus merasakan nikmatnya sayuran premium
+        ?. Hidriponik adalah solusinya. HidroponikKu mengajak anda untuk lebih
+        mengenal Hidroponik dari pemulahingga skala industri
       </p>
-      <img
-        src="./assets/backround_hero.svg"
-        alt="backround hero"
-        class="decoration"
-      />
-    </section>
-    <section class="benefit" id="benefit"></section>
-    <section class="program" id="program"></section>
-    <section class="footer"></section>
+    </div>
+    <!-- End Content 1 -->
 
-    <script>
-      const data_benefit = [
-        {
-          icon: "",
-          label: "Pelatihan Hidroponik",
-          desc: "Punya lahan sempit, tinggal di perkotaan yang panas, tapi ingin menyalurkan hobi berkebun sekaligus merasakan nikmatnya sayuran premium ?. Hidriponik adalah solusinya.  HidroponikKu mengajak anda untuk lebih mengenal Hidroponik dari pemula hingga skala industri. Punya lahan sempit, tinggal di perkotaan yang panas, tapi ingin menyalurkan hobi berkebun sekaligus merasakan nikmatnya sayuran premium ?. Hidriponik adalah solusinya.  HidroponikKu mengajak anda untuk lebih mengenal Hidroponik dari pemula hingga skala industri.",
-        },
-        {
-          icon: "",
-          label: "PELATIHAN HIDROPONIK DENGAN MATERI LEBIH TEPAT DAN LENGKAP",
-          desc: "Program ini dirancang untuk memberikan pelatihan kepada peserta terkait dengan praktik hidroponik. Hidroponik adalah sistem bercocok tanam tanpa menggunakan tanah, di mana nutrisi yang diperlukan oleh tanaman disediakan melalui larutan nutrisi yang larut air.",
-        },
-      ];
-      const sec_hero = document.querySelector(".hero");
-      const sec_benefit = document.querySelector("#benefit");
+    <!-- Start subjudul -->
+    <div class="container">
+      <h4>PELATIHAN HIDROPONIK DENGAN MATERI LEBIH TEPAT DAN LENGKAP</h4>
+    </div>
+    <!-- End subjudul -->
 
-      //   ketika hero tertutup maka akan menambahkan class crolled
-      const heroObserver = new IntersectionObserver(
-        (entries) => {
-          const [entry] = entries;
-          if (!entry.isIntersecting) {
-            document.querySelector("nav").classList.add("scrolled");
-          } else {
-            document.querySelector("nav").classList.remove("scrolled");
-          }
-        },
-        {
-          threshold: 0.9,
-        }
-      );
+    <!-- Start Content 2 -->
+    <div class="container pt-3">
+      <div class="card bg-grey" style="width: 100%">
+        <div class="card-body">
+          <h5 class="card-title fw-bold">
+            Materi : MENGENAL HIDROPONIK LEBIH DEKAT
+          </h5>
+          <div>
+            <ul>
+              <li>Tenik dasar</li>
+              <li>Mengenal media tanam</li>
+              <li>Mengenal sistem Hidroponik</li>
+              <li>Mengenal Nutrisi</li>
+              <li>Hidroponik Step By Step dari penyemaian hingga panen</li>
+              <li>Berbagi pengalaman hidroponik untuk Industri</li>
+              <li>Konsultasi & Tanya jawab seputar hidroponik</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Content 2 -->
 
-      load_dataBenefit = () => {
-        data_benefit.map((benefit) => {
-          const _element = make_elementBenefit(benefit);
-          //   console.log(_element);
-          sec_benefit.append(_element);
-        });
-      };
+    <!-- Start Content 3 -->
+    <div class="container pt-4">
+      <div class="card bg-grey" style="width: 100%">
+        <div class="card-body">
+          <h5 class="card-title fw-bold">Kegiatan</h5>
+          <div>
+            <ul>
+              <li>
+                Demo membuat larutan konsentrat dan larutan siap siram yang
+                benar
+              </li>
+              <li>Praktek langsung penyemaian</li>
+              <li>
+                Demo & melihat langsung berbagai sistem hidroponik di
+                HIDROPONIKKU
+              </li>
+              <li>Safari kebun hidroponik HIDROPONIKKU</li>
+              <li>Mengenal lebih dekat produk HIDROPONIKKU</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Content 3 -->
 
-      const make_elementBenefit = (benefit) => {
-        const container = document.createElement("div");
-        const icon = document.createElement("img");
-        const label = document.createElement("h2");
-        const desc = document.createElement("p");
+    <!-- Start Content 4 -->
+    <div class="container pt-4">
+      <div class="card bg-grey" style="width: 100%">
+        <div class="card-body">
+          <h5 class="card-title fw-bold">Fasilitas</h5>
+          <div>
+            <ul>
+              <li>Modul</li>
+              <li>Sertifikat Pelatihan</li>
+              <li>Snack</li>
+              <li>Spesial Diskon 5% pembelian semua produk di HIDROPONIKKU</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Content 4 -->
 
-        icon.src = benefit.icon;
-        label.innerText = benefit.label;
-        desc.innerText = benefit.desc;
-        container.append(icon, label, desc);
+    <!-- Start Content 4 -->
+    <div class="container pt-4">
+      <div class="card bg-grey" style="width: 100%">
+        <div class="card-body">
+          <h5 class="card-title fw-bold">Jadwal Pelaksanaan :</h5>
+          <div>
+            <p>Follow Instagram & facebook kami untuk jadwal selanjutnya</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Content 4 -->
 
-        return container;
-      };
-      //   jika document di load
-      document.addEventListener("DOMContentLoaded", () => {
-        load_dataBenefit();
-        heroObserver.observe(sec_hero);
-      });
-    </script>
-    <section class="background">
-      <section>
-        <h1 class="h1">Materi: Mengenal Hidroponik Lebih Dekat</h1>
-        <p class="p">-</p>
-      </section>
-      <section>
-        <h1 class="h1">KEGIATAN</h1>
-        <p class="p">-</p>
-      </section>
-      <section>
-        <h1 class="h1">Fasilitas</h1>
-        <p class="p">-</p>
-      </section>
-      <section>
-        <h1 class="h1">Jadwal Pelaksanaan</h1>
-        <p class="p">-</p>
-      </section>
-    </section>
+    <!-- Start Gambar -->
+    <div class="container py-5">
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+          <div class="card">
+            <img src="assets/p-1.jpg" class="card-img-top" />
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="assets/p-2.jpg" class="card-img-top" />
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="assets/p-3.jpg" class="card-img-top" />
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="assets/p-4.jpg" class="card-img-top" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Gambar -->
 
-    <footer class="akhir">
-      <section>
-        <h1>Info Lebih Lanjut Hubungi WA 0822-4679-5856 atau di Tokopedia &copy;2023</h1>
-      </section>
-    </footer>
-    <section class="out">
-      <p></p>
-    </section>
+    <!-- Start link -->
+    <div class="container">
+      <p class="fs-5">Share this:</p>
+      <a href="">
+        <button class="btn btn-lg btn-secondary me-5">
+          <i class="fa-solid fa-print"></i> Cetak
+        </button>
+      </a>
+      <a href="">
+        <button class="btn btn-lg btn-secondary me-5">
+          <i class="fa-solid fa-envelope"></i> Email
+        </button>
+      </a>
+      <a href="">
+        <button class="btn btn-lg btn-secondary me-5">
+          <i class="fa-brands fa-facebook"></i> Facebook
+        </button>
+      </a>
+      <a href="">
+        <button class="btn btn-lg btn-secondary me-5">
+          <i class="fa-brands fa-whatsapp"></i> Whatsapp
+        </button> </a
+      ><br />
+      <a href="">
+        <button class="btn btn-lg btn-secondary me-5 mt-5">
+          <i class="fa-regular fa-star"></i> Like
+        </button>
+      </a>
+      <p class="d-inline">
+        <a href="#" class="text-decoration-none">Be the first to like this</a>
+      </p>
+    </div>
+    <!-- End link -->
+
+    <!-- Start Footer -->
+    <div class="mt-5 bg-footer text-center">
+      <div class="d-flex justify-content-center pt-5 pb-4">
+        <p class="fs-5">
+          Info Lebih Lanjut Hubungi WA 0822-4679-5856 atau di Tokopedia
+        </p>
+      </div>
+    </div>
+    <!-- End Footer -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
