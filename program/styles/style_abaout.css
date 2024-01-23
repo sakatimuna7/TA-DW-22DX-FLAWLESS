@@ -170,7 +170,7 @@ header > .nav-bar > ul > li > a:hover {
     font-family: 'Roboto', sans-serif;
 }
 body{
-    background-color: #ecf2e4;
+    background-color: #fafafa;
 }
 .heading{
     width: 90%;
@@ -355,7 +355,7 @@ body{
 }
 
 .footer {
-    background-color: #424242;
-    color: white;
+    background-color: #edf3e2;
+    color: rgb(15, 14, 14);
   }
   
